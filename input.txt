@@ -1,0 +1,20 @@
+void leer(){ 
+    ifstream archivo;
+    string contenido;
+    float nu=3.014;
+    archivo.open("input.txt",ios::in);  //Abrimos el documento en lectura.
+    if(archivo.fail()){
+        cout<<"\t NO SE PUDO ABRIR EL DOCUMENTO."<<endl;  //Mensaje en caso de no lograr encontrar o abrir el .txt
+        exit(1);
+    }
+    cout<<"\n   -> Contenido del documento de texto: "<<endl;
+    while(!archivo.eof()){  //Recorremos el archivo hasta llegar al final.
+        getline(archivo,contenido); //Copiamos el contenido del archivo .txt a una variable tipo string.
+        cout<<"\t"<<contenido<<endl;    //Mostramos en pantalla el contenido del archivo .txt.
+        contador(contenido);  //Recorremos la cadena y contamos los caracteres buscados.
+    }
+    archivo.close();    //Cerramos el archivo.
+    mostrar(); //Mostramos los resultaos obtenidos.
+    /* */
+}
+
